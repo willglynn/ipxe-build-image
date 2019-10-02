@@ -1,0 +1,3 @@
+#!/bin/sh -e
+commit=`curl https://git.ipxe.org/ipxe.git/refs/heads/master`
+docker build --build-arg IPXE_VERSION="$commit" -f $DOCKERFILE_PATH -t $IMAGE_NAME .

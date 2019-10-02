@@ -1,0 +1,4 @@
+#!/bin/sh -e
+version=`docker inspect --format '{{ index .Config.Labels "org.ipxe.version"}}' $IMAGE_NAME`
+docker tag $IMAGE_NAME $DOCKER_REPO:$version
+docker push $DOCKER_REPO:$version
